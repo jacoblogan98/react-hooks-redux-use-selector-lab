@@ -4,11 +4,14 @@ import App from "./App";
 
 import usersReducer from "./features/users/usersSlice";
 
-// add imports and code
+import { Provider } from "react-redux"
+import { createStore } from "redux"
+
+const store = createStore(usersReducer)
 
 ReactDOM.render(
-  // add imports and code
-  <App />,
-  // add imports and code
-  document.getElementById("root")
+  <Provider store={store}>
+    <App />
+  </Provider>
+  , document.getElementById("root")
 );
